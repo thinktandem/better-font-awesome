@@ -1,6 +1,7 @@
 {
 	"name": "mickey-kay/better-font-awesome",
 	"description": "Better Font Awesome",
+	"type": "wordpress-plugin",
 	"license": "GPL-2.0",
 	"require": {
 		"mickey-kay/better-font-awesome-library": "v2.0.0-beta3"

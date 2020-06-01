@@ -12,14 +12,24 @@
  * Plugin Name:       Better Font Awesome
  * Plugin URI:        http://wordpress.org/plugins/better-font-awesome
  * Description:       The ultimate Font Awesome icon plugin for WordPress.
- * Version:           2.0.0-beta3
- * Author:            Mickey Kay
+ * Version:           Custom
+ * Author:            Mickey Kay, John Ouellet
  * Author URI:        mickeyskay@gmail.com
  * License:           GPLv2+
  * Text Domain:       better-font-awesome
  * Domain Path:       /languages
  * GitHub Plugin URI: https://github.com/MickeyKay/better-font-awesome
  */
+
+
+/**
+ * Since we tweaked this plugin, don't signal to update it anymore.
+ */
+function dont_update_this($value) {
+  unset($value->response[plugin_basename(__FILE__)]);
+  return $value;
+}
+add_filter( 'site_transient_update_plugins', 'dont_update_this' );
 
 add_action( 'init', 'bfa_start', 5 );
 /**
